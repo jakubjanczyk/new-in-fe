@@ -1,0 +1,50 @@
+.item {
+    color: red;
+}
+
+@container my-container (width > 400px) {
+    .item {
+        color: blue;
+    }
+}
+
+@container another-container (width > 350px) {
+    .item {
+        color: green;
+    }
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    container-type: inline-size;
+    container-name: my-container;
+
+    padding: 20px;
+    margin: 10px;
+    height: 100px;
+    width: calc(100% - 80px);
+
+    border: 1px solid black;
+}
+
+.container--another {
+    container-type: inline-size;
+    container-name: another-container;
+
+    max-width: 600px;
+}
+
+.container--small {
+    max-width: 300px;
+}
+
+.container--large {
+    max-width: 700px;
+}
